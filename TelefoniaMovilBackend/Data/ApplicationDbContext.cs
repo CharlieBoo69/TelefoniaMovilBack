@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TelefoniaMovilBackend.Models; // Asegúrate de importar el espacio de nombres donde está tu clase Plan
+using TelefoniaMovilBackend.Models;
 
 namespace TelefoniaMovilBackend.Data
 {
@@ -10,7 +10,7 @@ namespace TelefoniaMovilBackend.Data
         {
         }
 
-        // Define un DbSet para cada modelo que quieres mapear en la base de datos
+        // Define los DbSet para mapear las tablas en la base de datos
         public DbSet<Plan> Planes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Suscripcion> Suscripciones { get; set; }
@@ -19,7 +19,7 @@ namespace TelefoniaMovilBackend.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configura las relaciones
+            // Configura las relaciones entre las entidades
             modelBuilder.Entity<Usuario>()
                 .HasMany(u => u.Suscripciones)
                 .WithOne(s => s.Usuario)
@@ -32,25 +32,13 @@ namespace TelefoniaMovilBackend.Data
                 .HasForeignKey(s => s.PlanId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Configuración de las tablas
+            // Configura la precisión de 'Costo' en la entidad 'Plan'
+            modelBuilder.Entity<Plan>().Property(p => p.Costo).HasPrecision(18, 2);
+
+            // Configura los nombres de las tablas
             modelBuilder.Entity<Plan>().ToTable("planes");
             modelBuilder.Entity<Usuario>().ToTable("usuarios");
             modelBuilder.Entity<Suscripcion>().ToTable("suscripciones");
-
-            // Configuración de tipos de datos
-            modelBuilder.Entity<Plan>().Property(p => p.Nombre).HasColumnType("nvarchar(max)");
-            modelBuilder.Entity<Plan>().Property(p => p.Operadora).HasColumnType("nvarchar(max)");
-            modelBuilder.Entity<Plan>().Property(p => p.BeneficiosAdicionales).HasColumnType("nvarchar(max)");
-
-            modelBuilder.Entity<Usuario>().Property(u => u.Nombre).HasColumnType("nvarchar(max)");
-            modelBuilder.Entity<Usuario>().Property(u => u.Email).HasColumnType("nvarchar(max)");
-            modelBuilder.Entity<Usuario>().Property(u => u.Telefono).HasColumnType("nvarchar(max)");
-            modelBuilder.Entity<Usuario>().Property(u => u.Password).HasColumnType("nvarchar(max)");
-
-            modelBuilder.Entity<Suscripcion>().Property(s => s.NumeroTelefono).HasColumnType("nvarchar(max)");
-
-            // Especifica la precisión y escala de la propiedad 'Costo' en la entidad 'Plan'
-            modelBuilder.Entity<Plan>().Property(p => p.Costo).HasPrecision(18, 2);
         }
     }
 }

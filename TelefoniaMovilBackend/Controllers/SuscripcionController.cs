@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using TelefoniaMovilBackend.Data;
 using TelefoniaMovilBackend.Models;
+using System.IdentityModel.Tokens.Jwt;
+
+
 
 namespace TelefoniaMovilBackend.Controllers
 {
@@ -18,6 +22,57 @@ namespace TelefoniaMovilBackend.Controllers
         {
             _context = context;
         }
+
+        [HttpPost("subscribe")]
+        public async Task<IActionResult> Subscribe([FromBody] NewSubscriptionRequest request)
+        {
+            try
+            {
+                // Obtener el UserId desde la cookie o sesión
+                var userId = HttpContext.Session.GetInt32("UserId");
+                if (userId == null)
+                {
+                    return Unauthorized("Usuario no autenticado.");
+                }
+
+                // Validar que el número de teléfono no esté ya registrado
+                var existingSubscription = await _context.Suscripciones
+                    .FirstOrDefaultAsync(s => s.NumeroTelefono == request.NumeroTelefono);
+                if (existingSubscription != null)
+                {
+                    return BadRequest("El número de teléfono ya tiene una suscripción.");
+                }
+
+                // Crear una nueva suscripción
+                var nuevaSuscripcion = new Suscripcion
+                {
+                    UsuarioId = userId.Value,
+                    PlanId = request.PlanId,
+                    NumeroTelefono = request.NumeroTelefono,
+                    FechaSuscripcion = DateTime.Now
+                };
+
+                _context.Suscripciones.Add(nuevaSuscripcion);
+                await _context.SaveChangesAsync();
+
+                return Ok("Suscripción creada con éxito.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al crear la suscripción: {ex.Message}");
+            }
+        }
+
+        // Clase para manejar la solicitud de nueva suscripción
+        public class NewSubscriptionRequest
+        {
+            public int PlanId { get; set; }
+            public string NumeroTelefono { get; set; }
+        }
+
+
+
+
         // GET: api/Suscripcion
         [HttpGet]
         public async Task<IActionResult> GetAllSuscripciones()
@@ -30,6 +85,49 @@ namespace TelefoniaMovilBackend.Controllers
             var suscripciones = await _context.Suscripciones.ToListAsync();
             return Ok(suscripciones);
         }
+
+
+        [HttpGet("User")]
+        public async Task<IActionResult> GetSuscripcionesByUser()
+        {
+            try
+            {
+                // Recuperar el UserId desde la sesión
+                var userId = HttpContext.Session.GetInt32("UserId");
+                if (userId == null)
+                {
+                    Console.WriteLine("No estás autenticado. La sesión no contiene un UserId.");
+                    return Unauthorized("No estás autenticado.");
+                }
+
+                Console.WriteLine($"Usuario autenticado con ID: {userId}");
+
+                // Recuperar las suscripciones asociadas al usuario
+                var suscripciones = await _context.Suscripciones
+                    .Where(s => s.UsuarioId == userId)
+                    .Include(s => s.Plan) // Incluye datos del plan relacionado
+                    .Select(s => new
+                    {
+                        s.Id,
+                        s.NumeroTelefono,
+                        s.FechaSuscripcion,
+                        PlanNombre = s.Plan.Nombre
+                    })
+                    .ToListAsync();
+
+                Console.WriteLine($"Se encontraron {suscripciones.Count} suscripciones para el usuario con ID: {userId}");
+
+                return Ok(suscripciones);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error en GetSuscripcionesByUser: {ex.Message}");
+                return StatusCode(500, "Ocurrió un error interno en el servidor.");
+            }
+        }
+
+
+
 
 
         // GET: api/Suscripcion/{id}
@@ -105,7 +203,7 @@ namespace TelefoniaMovilBackend.Controllers
                 return Forbid("Acceso solo para administradores");
             }
 
-            // Verificar que el número de teléfono sea único
+           
             var existingSuscripcion = await _context.Suscripciones
                 .FirstOrDefaultAsync(s => s.NumeroTelefono == suscripcion.NumeroTelefono);
 
@@ -164,26 +262,60 @@ namespace TelefoniaMovilBackend.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Suscripcion/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSuscripcion(int id)
         {
-            if (!IsAdmin())
-            {
-                return Forbid("Acceso solo para administradores");
-            }
-
             var suscripcion = await _context.Suscripciones.FindAsync(id);
+
             if (suscripcion == null)
             {
-                return NotFound();
+                return NotFound("La suscripción no existe.");
             }
 
+            // Si el usuario es administrador, permite la eliminación
+            if (IsAdmin())
+            {
+                _context.Suscripciones.Remove(suscripcion);
+                await _context.SaveChangesAsync();
+                return NoContent();
+            }
+
+            // Validar que el usuario autenticado es el propietario de la suscripción
+            int authenticatedUserId = GetAuthenticatedUserId();
+            if (suscripcion.UsuarioId != authenticatedUserId)
+            {
+                return Forbid("No tienes permiso para eliminar esta suscripción.");
+            }
+
+            // Eliminar la suscripción
             _context.Suscripciones.Remove(suscripcion);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
+
+
+
+        private int GetAuthenticatedUserId()
+        {
+            // Verifica si la cookie existe
+            if (!Request.Cookies.ContainsKey("UserId"))
+            {
+                throw new UnauthorizedAccessException("No se encontró la cookie de UserId.");
+            }
+
+            // Obtiene el valor del UserId desde la cookie
+            string userId = Request.Cookies["UserId"];
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                throw new UnauthorizedAccessException("La cookie de UserId está vacía.");
+            }
+
+            return int.Parse(userId); // Convierte el valor a un entero
+        }
+
+
 
         private bool SuscripcionExists(int id)
         {

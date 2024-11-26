@@ -20,6 +20,38 @@ namespace TelefoniaMovilBackend.Controllers
         {
             _context = context;
         }
+        [HttpPost("GetRecommendedPlans")]
+        public IActionResult GetRecommendedPlans([FromBody] UserPreferences preferences)
+        {
+            try
+            {
+                // Obtener todos los planes disponibles de la base de datos
+                var plans = _context.Planes.ToList();
+
+                // Validar si hay planes disponibles
+                if (!plans.Any())
+                {
+                    return NotFound("No hay planes disponibles en este momento.");
+                }
+
+                // Registrar la cantidad de planes obtenidos para debug
+                Console.WriteLine($"Total de planes disponibles: {plans.Count}");
+
+                // Calcular las recomendaciones
+                var recommendedPlans = CalculateRecommendations(plans, preferences);
+
+                // Devolver las recomendaciones al frontend
+                return Ok(recommendedPlans);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Ocurrió un error al procesar la solicitud: {ex.Message}");
+            }
+        }
+
+
+
+
 
         // GET: api/PlanApi
         [HttpGet]
@@ -139,5 +171,85 @@ namespace TelefoniaMovilBackend.Controllers
             var isAdminClaim = User.Claims.FirstOrDefault(c => c.Type == "IsAdmin");
             return isAdminClaim != null && bool.TryParse(isAdminClaim.Value, out bool isAdmin) && isAdmin;
         }
+
+        private double CalculateSimilarity(Plan plan, UserPreferences preferences)
+        {
+            // similitud de costo datos minutos SMS
+            double costSimilarity = 1 - (Math.Abs((double)preferences.Costo - (double)plan.Costo) / Math.Max((double)preferences.Costo, (double)plan.Costo));
+            double datosSimilarity = 1 - (Math.Abs(preferences.Datos - plan.Datos) / (double)Math.Max(preferences.Datos, plan.Datos));
+            double minutosSimilarity = 1 - (Math.Abs(preferences.Minutos - plan.Minutos) / (double)Math.Max(preferences.Minutos, plan.Minutos));
+            double smsSimilarity = 1 - (Math.Abs(preferences.SMS - plan.SMS) / (double)Math.Max(preferences.SMS, plan.SMS));
+
+            // preferencia de operadora
+            double operadoraSimilarity = 0; // no afecta si no se especifica
+            if (!string.IsNullOrEmpty(preferences.Operadora))
+            {
+                operadoraSimilarity = plan.Operadora == preferences.Operadora ? 1 : 0;
+            }
+
+            // Promediar las similitudes
+            int divisor = string.IsNullOrEmpty(preferences.Operadora) ? 4 : 5;
+            return ((costSimilarity + datosSimilarity + minutosSimilarity + smsSimilarity + operadoraSimilarity) / divisor) * 100;
+        }
+
+        private List<object> CalculateRecommendations(List<Plan> plans, UserPreferences preferences)
+        {
+            // Normalización de los pesos
+            double totalPeso = preferences.PesoCosto + preferences.PesoDatos + preferences.PesoMinutos + preferences.PesoSMS;
+            if (totalPeso > 0)
+            {
+                preferences.PesoCosto /= totalPeso;
+                preferences.PesoDatos /= totalPeso;
+                preferences.PesoMinutos /= totalPeso;
+                preferences.PesoSMS /= totalPeso;
+            }
+
+            // Normalización de los datos**
+            var normalizedPlans = plans.Select(plan => new
+            {
+                Plan = plan,
+                NormalizedCost = 1 - ((double)plan.Costo / (double)plans.Max(p => p.Costo)),
+                NormalizedDatos = (double)plan.Datos / plans.Max(p => p.Datos),
+                NormalizedMinutos = (double)plan.Minutos / plans.Max(p => p.Minutos),
+                NormalizedSMS = (double)plan.SMS / plans.Max(p => p.SMS)
+            }).ToList();
+
+            // score similarity y hybridScore
+            var scoredPlans = normalizedPlans.Select(nPlan => new
+            {
+                Plan = nPlan.Plan,
+                Score = (preferences.PesoCosto * nPlan.NormalizedCost) +
+                        (preferences.PesoDatos * nPlan.NormalizedDatos) +
+                        (preferences.PesoMinutos * nPlan.NormalizedMinutos) +
+                        (preferences.PesoSMS * nPlan.NormalizedSMS),
+                Similarity = CalculateSimilarity(nPlan.Plan, preferences), //  calcular similitud
+                HybridScore = 0.5 * (
+                    (preferences.PesoCosto * nPlan.NormalizedCost) +
+                    (preferences.PesoDatos * nPlan.NormalizedDatos) +
+                    (preferences.PesoMinutos * nPlan.NormalizedMinutos) +
+                    (preferences.PesoSMS * nPlan.NormalizedSMS)
+                ) + (0.5 * CalculateSimilarity(nPlan.Plan, preferences)) // score y similarity
+            })
+            .OrderByDescending(sp => sp.HybridScore) // Ordenar por HybridScore
+            .ToList();
+
+            Console.WriteLine($"Planes evaluados:");
+            foreach (var sp in scoredPlans)
+            {
+                Console.WriteLine($"Plan ID: {sp.Plan.Id}, Nombre: {sp.Plan.Nombre}, Score: {sp.Score}, Similarity: {sp.Similarity}, HybridScore: {sp.HybridScore}");
+            }
+
+            //  tres mejores opciones
+            return scoredPlans.Take(3).Select(sp => new
+            {
+                Plan = sp.Plan,
+                HybridScore = sp.HybridScore,
+                SimilarityPercentage = sp.Similarity
+            }).ToList<object>();
+        }
+
+
+
+
     }
 }

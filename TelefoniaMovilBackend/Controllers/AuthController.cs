@@ -24,6 +24,20 @@ namespace TelefoniaMovilBackend.Controllers
             _context = context;
         }
 
+        [HttpPost("logout")]
+        public IActionResult Logout()
+        {
+            // Limpia la sesión del usuario
+            HttpContext.Session.Clear();
+
+            // Si utilizas cookies para la autenticación, puedes invalidar las cookies si es necesario
+            Response.Cookies.Delete(".AspNetCore.Session");
+
+            // Devuelve una respuesta indicando que la sesión fue cerrada
+            return Ok(new { message = "Sesión cerrada con éxito" });
+        }
+
+
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLogin userLogin)
         {
@@ -36,33 +50,71 @@ namespace TelefoniaMovilBackend.Controllers
                 return Unauthorized("Credenciales incorrectas");
             }
 
-            // Genera el token con el claim "IsAdmin"
-            var token = GenerateJwtToken(usuario.IsAdmin);
+            // Almacena el ID del usuario en la sesión
+            HttpContext.Session.SetInt32("UserId", usuario.Id);
+
+            // Genera el token con los claims "IsAdmin" y "userId"
+            var token = GenerateJwtToken(usuario);
+
+            // Establece una cookie con el UserId
+            Response.Cookies.Append("UserId", usuario.Id.ToString(), new CookieOptions
+            {
+                HttpOnly = true,        // Proteger contra accesos desde JavaScript
+                Secure = true,          // Solo para HTTPS en producción
+                SameSite = SameSiteMode.Strict // Restricción del uso en el mismo dominio
+            });
 
             return Ok(new { token, role = usuario.IsAdmin ? "admin" : "user" });
         }
 
-        private string GenerateJwtToken(bool isAdmin)
+
+        private string GenerateJwtToken(Usuario usuario)
         {
+            // Clave de seguridad para el token
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+            // Claims del token, incluyendo el email
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, isAdmin ? "admin" : "user"),
-                new Claim("role", isAdmin ? "admin" : "user"),  // Añade el rol al token
-                new Claim("IsAdmin", isAdmin.ToString()),       // Añade el claim de IsAdmin
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim(JwtRegisteredClaimNames.Sub, usuario.Email),              // Email como claim principal (sub)
+                new Claim("role", usuario.IsAdmin ? "admin" : "user"),              // Rol del usuario
+                new Claim("IsAdmin", usuario.IsAdmin.ToString()),                   // Indica si es administrador
+                new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),        // ID del usuario
+                new Claim(JwtRegisteredClaimNames.Email, usuario.Email),            // Email explícitamente
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())   // ID único para el token
             };
 
+            // Crear el token
             var token = new JwtSecurityToken(
-                issuer: _configuration["Jwt:Issuer"],
-                audience: _configuration["Jwt:Audience"],
+                issuer: _configuration["Jwt:Issuer"],   // Emisor del token
+                audience: _configuration["Jwt:Audience"], // Audiencia del token
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(30),
+                expires: DateTime.Now.AddMinutes(30),    // Tiempo de expiración
                 signingCredentials: credentials);
 
+            // Generar el token como cadena
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        // Método auxiliar para verificar si el usuario es administrador
+        private bool IsAdmin()
+        {
+            var isAdminClaim = User.Claims.FirstOrDefault(c => c.Type == "IsAdmin");
+            return isAdminClaim != null && bool.TryParse(isAdminClaim.Value, out bool isAdmin) && isAdmin;
+        }
+
+        [HttpGet("CheckSession")]
+        public IActionResult CheckSession()
+        {
+            // Recupera el UserId desde la sesión
+            var userId = HttpContext.Session.GetInt32("UserId");
+            if (userId == null)
+            {
+                return Unauthorized("No hay ningún usuario autenticado.");
+            }
+
+            return Ok($"Usuario autenticado con ID: {userId}");
         }
     }
 

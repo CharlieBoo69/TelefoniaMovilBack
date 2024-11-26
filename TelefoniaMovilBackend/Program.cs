@@ -3,13 +3,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TelefoniaMovilBackend.Data;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configura la cadena de conexión para SQL Server
+// Configura la cadena de conexión MySQL
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Configura la autenticación JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -23,9 +24,21 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+
+            // Mapea NameIdentifier para que ASP.NET Core lo reconozca
+            NameClaimType = ClaimTypes.NameIdentifier
         };
     });
+
+// Configura sesiones
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Tiempo de expiración de la sesión
+    options.Cookie.HttpOnly = true;                // Seguridad: cookies accesibles solo por HTTP
+    options.Cookie.IsEssential = true;             // Esencial para el funcionamiento
+});
 
 // Agrega el servicio de autorización y define la política para el rol de administrador
 builder.Services.AddAuthorization(options =>
@@ -38,15 +51,24 @@ builder.Services.AddControllers();
 // Configuración de CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+    options.AddPolicy("AllowSpecificOrigin", policy =>
+        policy.WithOrigins("http://localhost:8080") // Cambia esto por la URL de tu frontend
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials()); // Esto permite enviar cookies
 });
+
 
 var app = builder.Build();
 
 app.UseStaticFiles();
-app.UseCors("AllowAll");
+app.UseCors("AllowSpecificOrigin");
+
 
 app.UseRouting();
+
+// Habilita sesiones
+app.UseSession();
 
 // Habilita autenticación y autorización
 app.UseAuthentication();
