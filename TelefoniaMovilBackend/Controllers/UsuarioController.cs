@@ -9,6 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using LoginRequest = TelefoniaMovilBackend.Models.LoginRequest;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace TelefoniaMovilBackend.Controllers
@@ -85,15 +86,25 @@ namespace TelefoniaMovilBackend.Controllers
         }
 
 
-        // POST: api/Usuario
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
+            // Validar que el correo electrónico no esté registrado
+            var usuarioExistente = await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == usuario.Email);
+            if (usuarioExistente != null)
+            {
+                return BadRequest("El correo electrónico ya está registrado.");
+            }
+
+            // Crear el usuario con los datos proporcionados
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 
+            // Retornar la respuesta con el recurso creado
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
         }
+
+
 
         // PUT: api/Usuario/5
         [HttpPut("{id}")]

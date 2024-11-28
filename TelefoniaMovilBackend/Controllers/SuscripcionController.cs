@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using TelefoniaMovilBackend.Data;
 using TelefoniaMovilBackend.Models;
 using System.IdentityModel.Tokens.Jwt;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 
 
@@ -23,19 +24,63 @@ namespace TelefoniaMovilBackend.Controllers
             _context = context;
         }
 
-        [HttpPost("subscribe")]
+
+        [HttpGet("ReporteUsuarios")]
+        public async Task<IActionResult> ReporteUsuarios([FromQuery] DateTime? fechaInicio, [FromQuery] DateTime? fechaFin)
+        {
+            try
+            {
+                //consultadiferida pra luego poner filtros
+
+
+                var query = _context.Suscripciones.Include(s => s.Plan).Include(s => s.Usuario).AsQueryable();
+                
+                if (fechaInicio.HasValue)
+                {
+                    query = query.Where(s => s.FechaSuscripcion >= fechaInicio.Value);
+                    
+                }
+                if (fechaFin.HasValue)
+                {
+                    query = query.Where(s => s.FechaSuscripcion <= fechaFin.Value);
+                }
+
+                var reporte = await query
+                    .GroupBy(s => s.UsuarioId).Where(g => g.Count() >= 2).Select(g => new
+                    {
+                        UsuarioId = g.Key,
+                        NombreUsuario = g.First().Usuario.Nombre,
+                        TotalSuscripciones = g.Count(),//x plan id
+                        PlanesRepetidos = g.GroupBy(s => s.PlanId).Where(p => p.Count() > 1).Select(p => p.First().Plan.Nombre)
+                                            .ToList()
+                    })
+                    .ToListAsync();
+
+                return Ok(reporte);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al generar el reporte: {ex.Message}");
+            }
+        }
+
+
+
+
+[HttpPost("subscribe")]
         public async Task<IActionResult> Subscribe([FromBody] NewSubscriptionRequest request)
         {
             try
             {
-                // Obtener el UserId desde la cookie o sesión
+                // obtener el UserId desde la cookie o sesion
                 var userId = HttpContext.Session.GetInt32("UserId");
                 if (userId == null)
                 {
+                    Console.WriteLine("Sesión no contiene UserId");
                     return Unauthorized("Usuario no autenticado.");
                 }
 
-                // Validar que el número de teléfono no esté ya registrado
+                // validar que el número de teléfono no este registrado
                 var existingSubscription = await _context.Suscripciones
                     .FirstOrDefaultAsync(s => s.NumeroTelefono == request.NumeroTelefono);
                 if (existingSubscription != null)
@@ -43,7 +88,7 @@ namespace TelefoniaMovilBackend.Controllers
                     return BadRequest("El número de teléfono ya tiene una suscripción.");
                 }
 
-                // Crear una nueva suscripción
+                // crear una nueva suscripción
                 var nuevaSuscripcion = new Suscripcion
                 {
                     UsuarioId = userId.Value,
@@ -63,7 +108,7 @@ namespace TelefoniaMovilBackend.Controllers
             }
         }
 
-        // Clase para manejar la solicitud de nueva suscripción
+        // clase para manejar la solicitud de nueva suscripción
         public class NewSubscriptionRequest
         {
             public int PlanId { get; set; }
@@ -322,7 +367,7 @@ namespace TelefoniaMovilBackend.Controllers
             return _context.Suscripciones.Any(e => e.Id == id);
         }
 
-        // Método auxiliar para verificar si el usuario es administrador
+        // metodo auxiliar para verificar si el usuario es administrador
         private bool IsAdmin()
         {
             var isAdminClaim = User.Claims.FirstOrDefault(c => c.Type == "IsAdmin");

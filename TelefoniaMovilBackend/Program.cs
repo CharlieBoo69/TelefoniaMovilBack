@@ -8,9 +8,15 @@ using System.Security.Claims;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configura la cadena de conexión MySQL
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+// Configura la cadena de conexión SQLSERVER
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    options.UseSqlServer(connectionString));
+
 
 // Configura la autenticación JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -36,7 +42,7 @@ builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Tiempo de expiración de la sesión
-    options.Cookie.HttpOnly = true;                // Seguridad: cookies accesibles solo por HTTP
+    options.Cookie.HttpOnly = true;                // Seguridad: cookies accesibles solo por HTTP(TRUE)
     options.Cookie.IsEssential = true;             // Esencial para el funcionamiento
 });
 
@@ -52,12 +58,13 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin", policy =>
-        policy.WithOrigins("http://localhost:8080") // Cambia esto por la URL de tu frontend
+        policy.WithOrigins("http://localhost:8080") // Cambia esto por la URL de tu frontend...https://funny-chaja-cfbdb1.netlify.app
               .AllowAnyMethod()
               .AllowAnyHeader()
-              .AllowCredentials()); // Esto permite enviar cookies
+              .AllowCredentials()); //  permite enviar cookies
 });
 
+    
 
 var app = builder.Build();
 

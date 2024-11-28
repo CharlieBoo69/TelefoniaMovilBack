@@ -151,3 +151,4 @@ C:\Users\ASUS\source\repos\TelefoniaMovilBackend\TelefoniaMovilBackend\obj\Relea
 C:\Users\ASUS\source\repos\TelefoniaMovilBackend\TelefoniaMovilBackend\obj\Release\net8.0\TelefoniaMovilBackend.pdb
 C:\Users\ASUS\source\repos\TelefoniaMovilBackend\TelefoniaMovilBackend\obj\Release\net8.0\TelefoniaMovilBackend.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\TelefoniaMovilBackend\TelefoniaMovilBackend\obj\Release\net8.0\ref\TelefoniaMovilBackend.dll
+C:\Users\ASUS\source\repos\TelefoniaMovilBackend\TelefoniaMovilBackend\obj\Release\net8.0\TelefoniaMovilBackend.sourcelink.json
