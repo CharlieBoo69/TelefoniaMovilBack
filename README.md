@@ -17,16 +17,21 @@ Este es el backend del sistema de gestión de planes y suscripciones de telefon�
 ## 🚀 Características
 
 ### Funcionalidades Principales:
+
 1. **Gestión de Usuarios**:
    - Crear, editar y eliminar usuarios desde el panel de administración.
+
 2. **Gestión de Planes**:
    - Crear, editar, eliminar y listar planes de telefonía.
    - Filtrar planes por operadora.
+
 3. **Gestión de Suscripciones**:
    - Crear suscripciones asociadas a un usuario y un número de teléfono.
    - Evitar duplicados por número de teléfono.
+
 4. **Recomendaciones de Planes**:
    - Basadas en las preferencias de costo, datos, minutos y operadora del usuario.
+
 5. **Reportes**:
    - Listado de usuarios con al menos dos suscripciones.
    - Identificación de planes repetidos (suscritos por el mismo usuario con diferentes números).
@@ -40,9 +45,24 @@ Este es el backend del sistema de gestión de planes y suscripciones de telefon�
 
 ## 📂 Estructura del Proyecto
 
-├── Controllers │ ├── AuthController.cs # Controlador de autenticación (login, logout) │ ├── PlanApiController.cs # CRUD y recomendaciones de planes │ ├── SuscripcionController.cs # CRUD y reportes de suscripciones │ └── UsuarioController.cs # CRUD de usuarios ├── Data │ ├── ApplicationDbContext.cs # Contexto de la base de datos ├── Models │ ├── Plan.cs # Modelo de planes │ ├── Suscripcion.cs # Modelo de suscripciones │ ├── Usuario.cs # Modelo de usuarios │ └── UserPreferences.cs # Preferencias para recomendaciones ├── Program.cs # Configuración principal del backend └── appsettings.json # Configuración de la base de datos y JWT
+```plaintext
+📂 Proyecto
+├── 📁 Controllers
+│   ├── AuthController.cs          # Controlador de autenticación (login, logout)
+│   ├── PlanApiController.cs       # CRUD y recomendaciones de planes
+│   ├── SuscripcionController.cs   # CRUD y reportes de suscripciones
+│   └── UsuarioController.cs       # CRUD de usuarios
+├── 📁 Data
+│   └── ApplicationDbContext.cs    # Contexto de la base de datos
+├── 📁 Models
+│   ├── Plan.cs                    # Modelo de planes
+│   ├── Suscripcion.cs             # Modelo de suscripciones
+│   ├── Usuario.cs                 # Modelo de usuarios
+│   └── UserPreferences.cs         # Preferencias para recomendaciones
+├── Program.cs                     # Configuración principal del backend
+└── appsettings.json               # Configuración de la base de datos y JWT
 
-
+```
 
 ---
 
@@ -90,3 +110,15 @@ En el archivo `appsettings.json`:
 ### Instrucciones:
 1. Sustituye **`tu-servidor`**, **`tu-bd`**, **`tu-usuario`**, **`tu_clave_secreta`**, etc., por los valores reales de tu proyecto.
 2. Si necesitas agregar algo más específico o ejemplos adicionales, házmelo saber.
+
+
+## ✨ Autor
+
+Proyecto desarrollado por Carlos Esteban Larco Escobar como parte del sistema de gestión de telefonía móvil.
+
+Para más información, puedes contactarme a través de:
+- 📧 Email: carlos.larco.escobar@udla.edu.ec
+- 💼 Telefono: 0969424932
+  
+
+¡Gracias por usar este proyecto! 😊
