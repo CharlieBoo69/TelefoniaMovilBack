@@ -87,7 +87,6 @@ En el archivo `appsettings.json`:
   }
 }
 ```
-
 ### Instrucciones:
 1. Sustituye **`tu-servidor`**, **`tu-bd`**, **`tu-usuario`**, **`tu_clave_secreta`**, etc., por los valores reales de tu proyecto.
 2. Si necesitas agregar algo más específico o ejemplos adicionales, házmelo saber.
