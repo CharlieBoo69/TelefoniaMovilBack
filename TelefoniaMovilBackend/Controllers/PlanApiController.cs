@@ -20,6 +20,16 @@ namespace TelefoniaMovilBackend.Controllers
         {
             _context = context;
         }
+
+        //private readonly IPlanRepository _planRepository;
+
+        //public PlanApiController(IPlanRepository planRepository)
+        //{
+        //    _planRepository = planRepository;
+        //}
+
+
+
         [HttpPost("GetRecommendedPlans")]
         public IActionResult GetRecommendedPlans([FromBody] UserPreferences preferences)
         {

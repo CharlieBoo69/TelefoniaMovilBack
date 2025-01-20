@@ -3,36 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\controllers\\suscripcioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\controllers\\suscripcioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\strategies\\operatorbasedrecommendationstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\strategies\\operatorbasedrecommendationstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\controllers\\planapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\controllers\\planapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\strategies\\irecommendationstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\strategies\\irecommendationstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\models\\suscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\models\\suscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\strategies\\basicrecommendationstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\strategies\\basicrecommendationstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\factories\\ijwttokenfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\factories\\ijwttokenfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\factories\\jwttokenfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\factories\\jwttokenfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\repositories\\planrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\repositories\\planrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\controllers\\planapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\controllers\\planapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\repositories\\iplanrepository..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\repositories\\iplanrepository..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\controllers\\suscripcioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\controllers\\suscripcioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,6 +75,10 @@
       "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\models\\userpreferences.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\models\\suscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\models\\suscripcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\models\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\models\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,12 +87,8 @@
       "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\migrations\\20241126190824_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\migrations\\20241126190824_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|c:\\users\\asus\\source\\repos\\telefoniamovilbackend\\telefoniamovilbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34BD5E6-2F18-432A-A79C-703631D8E0A5}|TelefoniaMovilBackend\\TelefoniaMovilBackend.csproj|solutionrelative:telefoniamovilbackend\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,58 +106,212 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Suscripcion.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\Suscripcion.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Models\\Suscripcion.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\Suscripcion.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Models\\Suscripcion.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
+              "DocumentIndex": 1,
+              "Title": "OperatorBasedRecommendationStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Strategies\\OperatorBasedRecommendationStrategy.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Strategies\\OperatorBasedRecommendationStrategy.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Strategies\\OperatorBasedRecommendationStrategy.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Strategies\\OperatorBasedRecommendationStrategy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T16:57:56.04Z",
+              "WhenOpened": "2025-01-20T20:44:30.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BasicRecommendationStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Strategies\\BasicRecommendationStrategy.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Strategies\\BasicRecommendationStrategy.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Strategies\\BasicRecommendationStrategy.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Strategies\\BasicRecommendationStrategy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T20:44:03.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IRecommendationStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Strategies\\IRecommendationStrategy.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Strategies\\IRecommendationStrategy.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Strategies\\IRecommendationStrategy.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Strategies\\IRecommendationStrategy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T20:43:43.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAkwHgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:47:17.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\appsettings.json",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\appsettings.json",
+              "RelativeToolTip": "TelefoniaMovilBackend\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-14T04:08:33.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SuscripcionController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\SuscripcionController.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Controllers\\SuscripcionController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\SuscripcionController.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Controllers\\SuscripcionController.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAYwFYAAAARAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Program.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Program.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:48:35.635Z",
+              "WhenOpened": "2025-01-20T19:09:30.264Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "20241126190824_InitialMigration.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Migrations\\20241126190824_InitialMigration.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Migrations\\20241126190824_InitialMigration.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Migrations\\20241126190824_InitialMigration.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Migrations\\20241126190824_InitialMigration.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "DocumentIndex": 9,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Services\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Services\\IAuthService.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Services\\IAuthService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T19:08:24.448Z"
+              "WhenOpened": "2025-01-20T20:22:53.55Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Controllers\\UsuarioController.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAYwGEAAAAAAAAA",
+              "DocumentIndex": 10,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Services\\AuthService.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Services\\AuthService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAUwCAAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T19:24:28.69Z",
+              "WhenOpened": "2025-01-20T20:23:36.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PlanApiController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\PlanApiController.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Controllers\\PlanApiController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\PlanApiController.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Controllers\\PlanApiController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:37:18.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IJwtTokenFactory.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Factories\\IJwtTokenFactory.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Factories\\IJwtTokenFactory.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Factories\\IJwtTokenFactory.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Factories\\IJwtTokenFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T19:22:35.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JwtTokenFactory.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Factories\\JwtTokenFactory.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Factories\\JwtTokenFactory.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Factories\\JwtTokenFactory.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Factories\\JwtTokenFactory.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAcwCcAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T19:23:10.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "PlanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Repositories\\PlanRepository.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Repositories\\PlanRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Repositories\\PlanRepository.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Repositories\\PlanRepository.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAmwDIAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T18:52:12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IPlanRepository..cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Repositories\\IPlanRepository..cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Repositories\\IPlanRepository..cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Repositories\\IPlanRepository..cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Repositories\\IPlanRepository..cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T18:51:32.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SuscripcionController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\SuscripcionController.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Controllers\\SuscripcionController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\SuscripcionController.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Controllers\\SuscripcionController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAHkBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T03:48:35.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T19:24:28.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\appsettings.Development.json",
+              "RelativeToolTip": "TelefoniaMovilBackend\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-27T01:16:59.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Models\\Usuario.cs",
@@ -137,57 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T18:30:17.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PlanApiController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\PlanApiController.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Controllers\\PlanApiController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\PlanApiController.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Controllers\\PlanApiController.cs",
-              "ViewState": "AQIAAHEAAAAAAAAAAAAuwMIAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:37:18.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\appsettings.Development.json",
-              "RelativeToolTip": "TelefoniaMovilBackend\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-27T01:16:59.208Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Models\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\LoginRequest.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Models\\LoginRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T16:53:52.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "UserPreferences.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\UserPreferences.cs",
               "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Models\\UserPreferences.cs",
@@ -199,7 +335,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
+              "Title": "Suscripcion.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\Suscripcion.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Models\\Suscripcion.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\Suscripcion.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Models\\Suscripcion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:57:56.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "Plan.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\Plan.cs",
               "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Models\\Plan.cs",
@@ -211,41 +359,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\appsettings.json",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\appsettings.json",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\appsettings.json",
-              "RelativeToolTip": "TelefoniaMovilBackend\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-14T04:08:33.546Z"
+              "DocumentIndex": 20,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Models\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Models\\LoginRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T16:53:52.8Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAkwHAAAAANAAAA",
+              "DocumentIndex": 21,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "TelefoniaMovilBackend\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAcwCwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:47:17.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T18:30:17.987Z"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Program.cs",
-              "RelativeDocumentMoniker": "TelefoniaMovilBackend\\Program.cs",
-              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\TelefoniaMovilBackend\\TelefoniaMovilBackend\\Program.cs",
-              "RelativeToolTip": "TelefoniaMovilBackend\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFEAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T03:34:26.71Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         }

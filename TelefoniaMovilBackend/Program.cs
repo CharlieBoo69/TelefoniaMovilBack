@@ -5,17 +5,20 @@ using System.Text;
 using TelefoniaMovilBackend.Data;
 using System.Security.Claims;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Configura la cadena de conexión MySQL
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-//builder.Services.AddDbContext<ApplicationDbContext>(options =>
-//    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
-
-// Configura la cadena de conexión SQLSERVER
+//Configura la cadena de conexión MySQL
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+// Configura la cadena de conexión SQLSERVER
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//options.UseSqlServer(connectionString));
+
 
 
 // Configura la autenticación JWT
@@ -38,6 +41,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 // Configura sesiones
+
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {
