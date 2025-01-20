@@ -43,6 +43,32 @@ Este es el backend del sistema de gestión de planes y suscripciones de telefon�
 
 ---
 
+## 🔧 Patrones de Diseño Implementados
+
+1. **Factory Pattern**:
+   - Centraliza la creación de objetos complejos, como la generación de tokens JWT, en clases dedicadas (e.g., `JwtTokenFactory`).
+   - Esto permite que el controlador delegue la responsabilidad de creación y se enfoque solo en manejar solicitudes HTTP.
+
+2. **Repository Pattern**:
+   - Abstrae el acceso a datos mediante interfaces (`IPlanRepository`), lo que permite desacoplar la lógica de negocio del acceso directo a la base de datos.
+   - Facilita pruebas unitarias y futuras modificaciones en la capa de persistencia.
+
+---
+
+## 📜 Principios SOLID Aplicados
+
+1. **Single Responsibility Principle (SRP)**:
+   - Cada clase tiene una única responsabilidad:
+     - Los controladores manejan solicitudes HTTP.
+     - Los servicios (`AuthService`, `PlanService`) contienen la lógica de negocio.
+     - Las fábricas y repositorios encapsulan la creación de objetos y acceso a datos, respectivamente.
+
+2. **Open/Closed Principle (OCP)**:
+   - Las funcionalidades, como las recomendaciones de planes, son abiertas a extensiones mediante estrategias (`IRecommendationStrategy`) y cerradas a modificaciones del código existente.
+   - Se pueden agregar nuevas estrategias sin alterar las clases actuales.
+
+---
+
 ## 📂 Estructura del Proyecto
 
 ```plaintext
@@ -59,6 +85,12 @@ Este es el backend del sistema de gestión de planes y suscripciones de telefon�
 │   ├── Suscripcion.cs             # Modelo de suscripciones
 │   ├── Usuario.cs                 # Modelo de usuarios
 │   └── UserPreferences.cs         # Preferencias para recomendaciones
+├── 📁 Services
+│   ├── AuthService.cs             # Lógica de autenticación
+│   ├── PlanService.cs             # Lógica de negocio de planes
+├── 📁 Strategies
+│   ├── BasicRecommendationStrategy.cs   # Estrategia básica de recomendaciones
+│   ├── OperatorBasedRecommendationStrategy.cs # Estrategia basada en operadora
 ├── Program.cs                     # Configuración principal del backend
 └── appsettings.json               # Configuración de la base de datos y JWT
 
